@@ -29,6 +29,7 @@ class Application(tk.Frame):
         
 if __name__ == "__main__":
     root = tk.Tk()
+    root.iconbitmap(default="icon.ico")
     cfg = cfg.ConfigParser()
     cfg.read("config.ini")
     app = Application(master=root,cfg=cfg)
