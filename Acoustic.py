@@ -37,7 +37,7 @@ class Application(tk.Frame):
                     self.button = tk.Button(self, text=os.path.splitext(os.path.basename(self.files[x+y*int(self.cfg["BUTTON"]["height"])]))[0],command=partial(self.play_sound,x+y*8)).place(x=x*int(self.cfg["BUTTON"]["x"]),y=y*int(self.cfg["BUTTON"]["y"]),width=int(self.cfg["BUTTON"]["x"]),height=int(self.cfg["BUTTON"]["y"]))
         except IndexError:
             pass
-        stop = tk.Button(self, text="stop",command=self.stop_sound).place(x=int(self.cfg["SYSTEM"]["width"])-int(self.cfg["BUTTON"]["x"]),y=int(self.cfg["SYSTEM"]["height"])-int(self.cfg["BUTTON"]["y"]),width=int(self.cfg["BUTTON"]["x"]),height=int(self.cfg["BUTTON"]["y"]))
+        stop = tk.Button(self, text="停止",command=self.stop_sound).place(x=int(self.cfg["SYSTEM"]["width"])-int(self.cfg["BUTTON"]["x"]),y=int(self.cfg["SYSTEM"]["height"])-int(self.cfg["BUTTON"]["y"]),width=int(self.cfg["BUTTON"]["x"]),height=int(self.cfg["BUTTON"]["y"]))
     def stop_sound(self):
         pygame.mixer.stop()
         
