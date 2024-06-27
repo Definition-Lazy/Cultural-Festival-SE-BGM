@@ -26,6 +26,8 @@ class Application(tk.Frame):
                     self.button = tk.Button(self, text=os.path.splitext(os.path.basename(self.files[x+y*8]))[0],command=partial(self.play_sound,x+y*8)).place(x=x*int(self.cfg["BUTTON"]["x"]),y=y*int(self.cfg["BUTTON"]["y"]),width=int(self.cfg["BUTTON"]["x"]),height=int(self.cfg["BUTTON"]["y"]))
         except IndexError:
             pass
+    def stop_sound(self):
+        pygame.mixer.stop()
         
 if __name__ == "__main__":
     root = tk.Tk()
