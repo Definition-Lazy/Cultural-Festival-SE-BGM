@@ -6,6 +6,11 @@ import configparser as cfg
 from functools import partial
 
 pygame.mixer.init()
+
+try:
+    os.mkdir("./sound")
+except FileExistsError:
+    pass
 class Application(tk.Frame):
     def __init__(self, master=None,cfg=None):
         super().__init__(master,width=int(cfg["SYSTEM"]["width"]), height=int(cfg["SYSTEM"]["height"]))
